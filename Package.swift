@@ -10,7 +10,12 @@ let package = Package(
         .library(name: "SwiftyJSON", targets: ["SwiftyJSON"])
     ],
     targets: [
-        .target(name: "SwiftyJSON", dependencies: []),
+        .target(name: "SwiftyJSON", 
+                dependencies: [],
+                resources: [
+                    .copy("PrivacyInfo.xcprivacy")
+                ]
+               ),
         .testTarget(name: "SwiftJSONTests", dependencies: ["SwiftyJSON"])
     ],
     swiftLanguageVersions: [.v5]
